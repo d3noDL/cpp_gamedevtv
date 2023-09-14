@@ -9,25 +9,25 @@ int main(){
     InitWindow(width, height, "Cool Window");
 
     // circle coordinates
+    
     int circleX{175};
     int circleY{100};
 
     SetTargetFPS(60);
     while (!WindowShouldClose()){
         BeginDrawing();
-        ClearBackground(RED);
+        ClearBackground(WHITE);
         // game logic begins
-
+        
         DrawCircle(circleX, circleY, 25, BLUE);
         
-        if (IsKeyDown(KEY_D)){
-            circleX++;
+        if (IsKeyDown(KEY_D) && circleX < width){
+            circleX += 10;
         }
 
-        if (IsKeyDown(KEY_A)){
-            circleX--;
+        if (IsKeyDown(KEY_A) && circleX > 0){
+            circleX -= 10;
         }
-        
 
         // game logic ends
         EndDrawing();
