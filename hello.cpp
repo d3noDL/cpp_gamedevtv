@@ -18,6 +18,8 @@ int main(){
     int axeX{400};
     int axeY{0};
 
+    int direction{10};
+
     SetTargetFPS(60);
     while (!WindowShouldClose()){
         BeginDrawing();
@@ -28,9 +30,13 @@ int main(){
         DrawRectangle(axeX, axeY, 50, 50, RED);
 
         // move the axe
-        axeY += 10;
+        axeY += direction;
+
+        if(axeY > 450 || axeY < 0){
+            direction = -direction;
+        }
         
-        if (IsKeyDown(KEY_D) && circleX < width){
+        if (IsKeyDown(KEY_D) && circleX < 800){
             circleX += 10;
         }
 
