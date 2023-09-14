@@ -1,11 +1,15 @@
-#include <cstdio> // Part of the standard library, should be in <>
 #include "raylib.h" //Header file for external library (Requires .h and "")
 
 int main(){
-    int width = 800;
-    float root_beer = 1.99;
-    double cheese_burger = 5.99;
-    bool shouldHaveLunch = true;
-    
+    bool equal{4 == 9}; //false
+    bool notEqual{4 != 9}; //true
+    bool less{4 < 9}; //true
+    bool greater{4 > 9}; //false
+    bool lessEqual{4 <= 9}; //true
+    bool greaterEqual{4 >= 9}; //false
+
+    int width;
+    width = 350;
     InitWindow(width, 600, "Cool Window");
+
 }
