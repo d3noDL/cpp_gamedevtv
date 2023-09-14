@@ -3,15 +3,20 @@
 int main(){
     
     // window dimensions
-    int width{350};
-    int height{200};
+    int width{800};
+    int height{450};
     
     InitWindow(width, height, "Cool Window");
 
     // circle coordinates
     
-    int circleX{175};
-    int circleY{100};
+    int circleX{200};
+    int circleY{200};
+
+    // axe coordinates
+
+    int axeX{400};
+    int axeY{0};
 
     SetTargetFPS(60);
     while (!WindowShouldClose()){
@@ -20,6 +25,10 @@ int main(){
         // game logic begins
         
         DrawCircle(circleX, circleY, 25, BLUE);
+        DrawRectangle(axeX, axeY, 50, 50, RED);
+
+        // move the axe
+        axeY += 10;
         
         if (IsKeyDown(KEY_D) && circleX < width){
             circleX += 10;
