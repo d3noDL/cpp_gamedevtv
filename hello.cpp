@@ -1,15 +1,35 @@
 #include "raylib.h" //Header file for external library (Requires .h and "")
 
 int main(){
-    bool equal{4 == 9}; //false
-    bool notEqual{4 != 9}; //true
-    bool less{4 < 9}; //true
-    bool greater{4 > 9}; //false
-    bool lessEqual{4 <= 9}; //true
-    bool greaterEqual{4 >= 9}; //false
+    
+    // window dimensions
+    int width{350};
+    int height{200};
+    
+    InitWindow(width, height, "Cool Window");
 
-    int width;
-    width = 350;
-    InitWindow(width, 600, "Cool Window");
+    // circle coordinates
+    int circleX{175};
+    int circleY{100};
 
+    SetTargetFPS(60);
+    while (!WindowShouldClose()){
+        BeginDrawing();
+        ClearBackground(RED);
+        // game logic begins
+
+        DrawCircle(circleX, circleY, 25, BLUE);
+        
+        if (IsKeyDown(KEY_D)){
+            circleX++;
+        }
+
+        if (IsKeyDown(KEY_A)){
+            circleX--;
+        }
+        
+
+        // game logic ends
+        EndDrawing();
+    }
 }
